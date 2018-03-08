@@ -13,7 +13,7 @@ const problemTwo = function(anArray){
 	let target = document.getElementById('answer2')
 	let arrayPriceRange = anArray.filter(listing => listing.price > 14 && listing.price < 18).filter(filtListing => filtListing.currency_code === 'USD')
 
-	target.innerHTML = `${arrayPriceRange.map(listingObject => listingObject.title).join('\n')}`
+	target.innerHTML = `${arrayPriceRange.map(listingObject => listingObject.title).join('\n\n')}`
 }
 problemTwo(items)
 
@@ -38,7 +38,7 @@ const problemFour = function(anArray) {
 			})
 			return isWooden	
 		})
-	target.innerHTML = `${woodenItems.map(listingObject => listingObject.title).join('\n')}`
+	target.innerHTML = `${woodenItems.map(listingObject => listingObject.title).join('\n\n')}`
 }
 problemFour(items)
 
@@ -48,7 +48,7 @@ const problemFive = function(anArray){
 	let manyMatItems = anArray.filter(listing => listing.materials.length >= 8)
 
 	target.innerHTML = `${manyMatItems.map(listObj => {
-				return `${listObj.title} has ${listObj.materials.length} materials:\n${listObj.materials.map(mat => mat).join('\n')}`
+				return `${listObj.title} has ${listObj.materials.length} materials:\n\n${listObj.materials.map(mat => mat).join('\n')}`
 			}
 		).join('\n\n')}`
 
